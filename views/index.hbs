@@ -1,10 +1,19 @@
-<h1>{{title}}</h1>
-{{#each posts}}
+<h1 class="titleFont">{{title}}</h1>
+{{#each descriptions}}
 <div>
     <p>{{this.title}}</p>
-    <p>{{this.content}}</p>
-    {{#each this.author}}
-        <p>{{this.username}}</p>
+    <img src="/images/bStone.webp">
+    {{#each this.parentItem}}
+        <div class="nameBox">
+            <h2>{{this.itemName}}</h2>
+        </div>
+        <div class="regText">
+            <p>Quality: {{this.quality}}</p>
+            <p>Released on the {{this.versionReleased}} version of the game.</p>
+        </div>
     {{/each}}
+    <div class="boxText">
+        <p>{{this.content}}</p>
+    </div>
 </div>
 {{/each}}
